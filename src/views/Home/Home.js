@@ -1,23 +1,30 @@
-import logo from "../../logo.svg";
 import "./Home.scss";
+import homeBg from "../../Assets/SingleplayerBG.gif";
+import { MainLogo, StoryModeLogo, MultiplayerMode } from "../../Assets/Constants";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/views/Home/Home.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img
+        className="App__backgroundAnimation"
+        alt="Background Animation"
+        src={homeBg}
+      />
+      <div className="App__container">
+        <img className="App__MainLogo" src={MainLogo} alt="MainLogo" />
+        <div className="App__bottom">
+          <div className="App__Modes">
+            <Link to="/story">
+              <img src={StoryModeLogo} alt="StoryModeLogo" />
+            </Link>
+            <Link to="/multiplayer">
+              <img src={MultiplayerMode} alt="MultiplayerMode" />
+            </Link>
+          </div>
+          <div className="App__options"></div>
+        </div>
+      </div>
     </div>
   );
 }
